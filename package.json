@@ -1,0 +1,19 @@
+{
+  "name": "vowora",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Vowora - India's Premier Wedding Planning & Vendor Marketplace",
+  "type": "module",
+  "scripts": {
+    "start": "python -m http.server 3000",
+    "serve": "npx serve -l 3000"
+  },
+  "keywords": [
+    "wedding-marketplace",
+    "wedmegood-clone",
+    "chennai-wedding-planners",
+    "vowora"
+  ],
+  "author": "Vowora Technologies",
+  "license": "MIT"
+}

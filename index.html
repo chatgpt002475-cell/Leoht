@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vowora - Best Wedding Planners in Chennai | Verified Reviews & Prices</title>
+  <meta name="description" content="Browse verified wedding planners in Chennai with reviews, real wedding portfolios, starting fees, and packages. Plan your dream wedding on Vowora.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            vowora: {
+              50: '#fef1f6',
+              100: '#fee5ee',
+              500: '#e72e76',
+              600: '#d11c63',
+              700: '#b0104f',
+            },
+            gold: {
+              500: '#d4af37',
+              600: '#b89428',
+            }
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#FAFBFD] text-gray-800 font-sans antialiased">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-gray-900 via-rose-950 to-gray-900 text-white text-xs py-2 px-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="bg-rose-600 text-white font-extrabold px-1.5 py-0.5 rounded text-[10px] uppercase">New</span>
+        <span>India's Leading Wedding Marketplace • Over 1,20,000+ Couples Planned</span>
+      </div>
+      <div class="hidden md:flex items-center gap-6 text-gray-300">
+        <span class="hover:text-white cursor-pointer">📞 Wedding Concierge: 1800-VOWORA</span>
+        <span>•</span>
+        <span class="hover:text-white cursor-pointer" id="list-business-btn-top">Are you a vendor? List Business</span>
+        <span>•</span>
+        <span class="hover:text-white cursor-pointer">Download App</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-4">
+        
+        <!-- Logo & City Selector -->
+        <div class="flex items-center gap-6">
+          <a href="#" class="flex items-center gap-2.5 group">
+            <div class="w-10 h-10 rounded-xl bg-vowora-gradient flex items-center justify-center text-white font-serif text-2xl font-bold shadow-md shadow-rose-200 group-hover:scale-105 transition-transform">
+              V
+            </div>
+            <div>
+              <span class="text-2xl font-black tracking-tight text-gray-900 font-serif">Vowora</span>
+              <span class="text-[9px] uppercase tracking-widest text-rose-600 font-bold block -mt-1">Weddings & Celebrations</span>
+            </div>
+          </a>
+
+          <!-- City Selector Dropdown Trigger -->
+          <button id="city-selector-btn" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gray-200 bg-gray-50/80 hover:bg-gray-100 text-xs font-semibold text-gray-700 transition-colors">
+            <span>📍</span>
+            <span id="current-city-label">Chennai</span>
+            <span class="text-[10px] text-gray-400">▼</span>
+          </button>
+        </div>
+
+        <!-- Global Search Bar with Live Filter -->
+        <div class="flex-1 max-w-md hidden md:block">
+          <div class="relative">
+            <input 
+              type="text" 
+              id="search-input"
+              placeholder="Search wedding planners, venues, or areas (e.g. ECR, T. Nagar)..." 
+              class="w-full pl-10 pr-4 py-2.5 text-xs bg-gray-100 border border-transparent rounded-full focus:bg-white focus:border-rose-400 focus:ring-2 focus:ring-rose-100 outline-none transition-all"
+            />
+            <span class="absolute left-3.5 top-2.5 text-gray-400 text-sm">🔍</span>
+          </div>
+        </div>
+
+        <!-- Action Buttons & Navigation -->
+        <div class="flex items-center gap-3">
+          <!-- Vendor Registration CTA -->
+          <button id="list-business-btn" class="hidden lg:flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold text-rose-600 border border-rose-300 rounded-xl hover:bg-rose-50 transition-colors">
+            <span>💼</span>
+            <span>List Your Business</span>
+          </button>
+
+          <!-- Shortlist Trigger -->
+          <button id="open-shortlist-btn" class="relative p-2.5 rounded-xl hover:bg-gray-100 text-gray-700 transition-colors" title="View Shortlisted Planners">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+            <span class="shortlist-count-badge hidden absolute -top-1 -right-1 w-5 h-5 bg-rose-600 text-white text-[10px] font-black rounded-full flex items-center justify-center">0</span>
+          </button>
+
+          <!-- Inquiries Trigger -->
+          <button id="open-inquiries-btn" class="relative p-2.5 rounded-xl hover:bg-gray-100 text-gray-700 transition-colors" title="My Enquiries">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+            </svg>
+            <span class="inquiries-count-badge hidden absolute -top-1 -right-1 w-5 h-5 bg-emerald-600 text-white text-[10px] font-black rounded-full flex items-center justify-center">0</span>
+          </button>
+
+          <!-- User Profile Login -->
+          <button class="px-4 py-2 bg-vowora-gradient text-white text-xs font-bold rounded-xl shadow-xs hover:opacity-95 transition-opacity">
+            Sign In
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Mega Menu Tabs -->
+      <nav class="flex items-center space-x-8 text-xs font-bold text-gray-600 border-t border-gray-100 overflow-x-auto py-2.5">
+        <button class="main-nav-tab active-tab text-rose-600 border-b-2 border-rose-600 pb-1" data-section="directory">
+          Wedding Planners & Vendors
+        </button>
+        <button class="main-nav-tab hover:text-rose-600 pb-1" data-section="tools">
+          Planning Tools & Budget
+        </button>
+        <button class="main-nav-tab hover:text-rose-600 pb-1" data-section="real-weddings">
+          Real Weddings & Ideas
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Category Circles Quick Ribbon -->
+  <section class="bg-white border-b border-gray-100 py-4 shadow-2xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-6 overflow-x-auto pb-1 text-center scrollbar-none">
+        
+        <div class="shrink-0 flex flex-col items-center cursor-pointer group">
+          <div class="w-14 h-14 rounded-full bg-rose-50 border-2 border-rose-500 flex items-center justify-center text-xl shadow-xs group-hover:scale-105 transition-transform">
+            📋
+          </div>
+          <span class="text-[11px] font-bold text-rose-600 mt-1.5">Planners</span>
+        </div>
+
+        <div class="shrink-0 flex flex-col items-center cursor-pointer group">
+          <div class="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center text-xl group-hover:border-rose-300 group-hover:scale-105 transition-transform">
+            🏰
+          </div>
+          <span class="text-[11px] font-medium text-gray-600 mt-1.5 group-hover:text-rose-600">Venues</span>
+        </div>
+
+        <div class="shrink-0 flex flex-col items-center cursor-pointer group">
+          <div class="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center text-xl group-hover:border-rose-300 group-hover:scale-105 transition-transform">
+            📷
+          </div>
+          <span class="text-[11px] font-medium text-gray-600 mt-1.5 group-hover:text-rose-600">Photographers</span>
+        </div>
+
+        <div class="shrink-0 flex flex-col items-center cursor-pointer group">
+          <div class="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center text-xl group-hover:border-rose-300 group-hover:scale-105 transition-transform">
+            💄
+          </div>
+          <span class="text-[11px] font-medium text-gray-600 mt-1.5 group-hover:text-rose-600">Bridal Makeup</span>
+        </div>
+
+        <div class="shrink-0 flex flex-col items-center cursor-pointer group">
+          <div class="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center text-xl group-hover:border-rose-300 group-hover:scale-105 transition-transform">
+            🌸
+          </div>
+          <span class="text-[11px] font-medium text-gray-600 mt-1.5 group-hover:text-rose-600">Decorators</span>
+        </div>
+
+        <div class="shrink-0 flex flex-col items-center cursor-pointer group">
+          <div class="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center text-xl group-hover:border-rose-300 group-hover:scale-105 transition-transform">
+            🍽️
+          </div>
+          <span class="text-[11px] font-medium text-gray-600 mt-1.5 group-hover:text-rose-600">Catering</span>
+        </div>
+
+        <div class="shrink-0 flex flex-col items-center cursor-pointer group">
+          <div class="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center text-xl group-hover:border-rose-300 group-hover:scale-105 transition-transform">
+            🎨
+          </div>
+          <span class="text-[11px] font-medium text-gray-600 mt-1.5 group-hover:text-rose-600">Mehndi</span>
+        </div>
+
+        <div class="shrink-0 flex flex-col items-center cursor-pointer group">
+          <div class="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center text-xl group-hover:border-rose-300 group-hover:scale-105 transition-transform">
+            💌
+          </div>
+          <span class="text-[11px] font-medium text-gray-600 mt-1.5 group-hover:text-rose-600">Invitations</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: MAIN VENDOR DIRECTORY -->
+  <main id="section-directory" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+    <!-- Breadcrumbs -->
+    <nav class="flex items-center gap-2 text-xs text-gray-500 mb-4">
+      <a href="#" class="hover:text-rose-600">Home</a>
+      <span>›</span>
+      <a href="#" class="hover:text-rose-600">Wedding Vendors</a>
+      <span>›</span>
+      <span class="text-gray-900 font-semibold">Wedding Planners in Chennai</span>
+    </nav>
+
+    <!-- Page Title & Header Bar -->
+    <div class="flex flex-wrap items-end justify-between gap-4 pb-6 border-b border-gray-200 mb-6">
+      <div>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-gray-900 font-serif">
+          Wedding Planners in Chennai
+        </h1>
+        <p class="text-xs sm:text-sm text-gray-500 mt-1">
+          Showing <span id="vendor-results-count" class="font-bold text-rose-600">loading...</span> • Verified portfolios, transparent fees & authentic reviews
+        </p>
+      </div>
+
+      <!-- Controls: Sort & View Mode -->
+      <div class="flex items-center gap-3">
+        <!-- Sort Dropdown -->
+        <div class="flex items-center gap-2 text-xs">
+          <span class="text-gray-500 font-medium">Sort by:</span>
+          <select id="sort-dropdown" class="bg-white border border-gray-300 rounded-xl px-3 py-2 text-xs font-semibold text-gray-700 outline-none focus:border-rose-500">
+            <option value="popularity">Popularity (Recommended)</option>
+            <option value="rating_desc">Rating: High to Low</option>
+            <option value="price_asc">Price: Low to High</option>
+            <option value="price_desc">Price: High to Low</option>
+            <option value="reviews_desc">Most Reviewed</option>
+          </select>
+        </div>
+
+        <!-- View Mode Switcher -->
+        <div class="flex items-center bg-gray-100 p-1 rounded-xl border border-gray-200">
+          <button id="view-grid-btn" class="p-1.5 rounded-lg bg-rose-50 text-rose-600 hover:text-rose-700 transition-colors" title="Grid View">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+            </svg>
+          </button>
+          <button id="view-list-btn" class="p-1.5 rounded-lg text-gray-500 hover:text-gray-700 transition-colors" title="List View">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Layout: Filters Sidebar (Left) + Vendor Cards (Right) -->
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      
+      <!-- Filter Sidebar -->
+      <aside class="lg:col-span-1 space-y-6">
+        <div class="bg-white rounded-2xl border border-gray-200 p-5 shadow-xs sticky top-28">
+          
+          <div class="flex items-center justify-between pb-4 border-b border-gray-100">
+            <h3 class="font-bold text-gray-900 text-sm flex items-center gap-2">
+              <span>⚡</span> Filters
+            </h3>
+            <button id="clear-filters-btn" class="text-xs font-bold text-rose-600 hover:text-rose-700">
+              Reset All
+            </button>
+          </div>
+
+          <!-- Locality Filter -->
+          <div class="py-4 border-b border-gray-100">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-gray-700 mb-2.5">
+              Locality in Chennai
+            </h4>
+            <div id="locality-filter-list" class="max-h-48 overflow-y-auto space-y-1 pr-1">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Budget Filter -->
+          <div class="py-4 border-b border-gray-100">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-gray-700 mb-2.5">
+              Planning Fee Budget
+            </h4>
+            <div class="space-y-1.5 text-xs text-gray-600">
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="budget" value="all" class="budget-radio text-rose-600 focus:ring-rose-500" checked />
+                <span>All Budgets</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="budget" value="under_2_5l" class="budget-radio text-rose-600 focus:ring-rose-500" />
+                <span>Under ₹2.5 Lakh</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="budget" value="2_5l_to_4l" class="budget-radio text-rose-600 focus:ring-rose-500" />
+                <span>₹2.5 Lakh - ₹4 Lakh</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="budget" value="4l_to_6l" class="budget-radio text-rose-600 focus:ring-rose-500" />
+                <span>₹4 Lakh - ₹6 Lakh</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="budget" value="above_6l" class="budget-radio text-rose-600 focus:ring-rose-500" />
+                <span>Above ₹6 Lakh (Luxury)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Rating Filter -->
+          <div class="py-4 border-b border-gray-100">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-gray-700 mb-2.5">
+              Customer Rating
+            </h4>
+            <div class="space-y-1.5 text-xs text-gray-600">
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="rating" value="0" class="rating-radio text-rose-600 focus:ring-rose-500" checked />
+                <span>All Ratings</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="rating" value="4.8" class="rating-radio text-rose-600 focus:ring-rose-500" />
+                <span class="flex items-center gap-1">4.8+ Rated <span class="text-yellow-500">★★★★★</span></span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="rating" value="4.5" class="rating-radio text-rose-600 focus:ring-rose-500" />
+                <span>4.5+ Highly Rated</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="rating" value="4.0" class="rating-radio text-rose-600 focus:ring-rose-500" />
+                <span>4.0+ Recommended</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Services Filter -->
+          <div class="py-4">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-gray-700 mb-2.5">
+              Services Offered
+            </h4>
+            <div class="space-y-1.5 text-xs text-gray-600">
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" value="Full Planning" class="service-checkbox rounded text-rose-600" />
+                <span>Full Planning & Execution</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" value="Partial Planning" class="service-checkbox rounded text-rose-600" />
+                <span>Partial Planning</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" value="Decor & Styling" class="service-checkbox rounded text-rose-600" />
+                <span>Decor & Floral Styling</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" value="Destination Weddings" class="service-checkbox rounded text-rose-600" />
+                <span>Destination Weddings</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" value="Hospitality & Logistics" class="service-checkbox rounded text-rose-600" />
+                <span>Hospitality & Logistics</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Free Concierge Banner -->
+          <div class="mt-4 p-4 rounded-xl bg-gradient-to-br from-rose-50 to-pink-100 border border-rose-200">
+            <span class="text-xl block mb-1">🎁</span>
+            <h5 class="text-xs font-extrabold text-gray-900">Need Help Deciding?</h5>
+            <p class="text-[11px] text-gray-600 mt-1">Our dedicated wedding advisors help you shortlist the perfect planners within your budget for free.</p>
+            <button onclick="alert('Vowora Wedding Concierge\n\nCall: +91 1800 890 234\nWhatsApp: +91 98401 23456\nAvailable 9 AM - 9 PM everyday.')" class="mt-3 w-full py-1.5 bg-rose-600 text-white text-xs font-bold rounded-lg hover:bg-rose-700 transition-colors shadow-2xs">
+              Talk to Expert
+            </button>
+          </div>
+
+        </div>
+      </aside>
+
+      <!-- Vendor Cards Grid Container -->
+      <section class="lg:col-span-3">
+        <div id="vendors-grid-container" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          <!-- Rendered dynamically via app.js -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- SECTION 2: PLANNING TOOLS (BUDGET CALCULATOR & CHECKLIST) -->
+  <section id="section-tools" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 hidden">
+    <div class="mb-8">
+      <h2 class="text-3xl font-extrabold text-gray-900 font-serif">Wedding Planning Tools</h2>
+      <p class="text-sm text-gray-500 mt-1">Estimate your expenses and stay on schedule with our interactive tools.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      <!-- Interactive Budget Calculator -->
+      <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h3 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+              <span>💰</span> Wedding Budget Calculator
+            </h3>
+            <p class="text-xs text-gray-500">Adjust total budget to see realistic allocations</p>
+          </div>
+          <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-rose-50 text-rose-700">Auto-calculated</span>
+        </div>
+
+        <!-- Total Budget Input & Slider -->
+        <div class="bg-gray-50 p-4 rounded-xl border border-gray-200/80 mb-6">
+          <label class="block text-xs font-bold text-gray-700 mb-1">Total Estimated Budget (₹ INR)</label>
+          <div class="flex items-center gap-3">
+            <span class="text-lg font-bold text-gray-400">₹</span>
+            <input 
+              type="number" 
+              id="total-budget-input" 
+              value="2500000" 
+              step="50000"
+              class="w-full text-xl font-black text-rose-700 bg-transparent outline-none"
+            />
+          </div>
+          <input 
+            type="range" 
+            id="total-budget-slider" 
+            min="500000" 
+            max="15000000" 
+            step="100000" 
+            value="2500000" 
+            class="w-full mt-3 accent-rose-600"
+          />
+          <div class="flex justify-between text-[11px] text-gray-400 mt-1">
+            <span>₹5 Lakhs</span>
+            <span>₹25 Lakhs</span>
+            <span>₹1.5 Crores</span>
+          </div>
+        </div>
+
+        <!-- Proportional Progress Bar -->
+        <div id="budget-progress-bar" class="flex w-full rounded-full overflow-hidden mb-6 h-3 shadow-inner">
+          <!-- Rendered dynamically -->
+        </div>
+
+        <!-- Breakdown List -->
+        <div id="budget-categories-list" class="space-y-2.5">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+      <!-- 12-Month Interactive Wedding Checklist -->
+      <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <div>
+              <h3 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+                <span>📋</span> 12-Month Wedding Checklist
+              </h3>
+              <p class="text-xs text-gray-500">Your master countdown timeline from engagement to D-Day</p>
+            </div>
+            <span id="checklist-progress-text" class="text-xs font-bold text-rose-700 bg-rose-50 px-3 py-1 rounded-full">
+              0% Done
+            </span>
+          </div>
+
+          <!-- Checklist Progress Bar -->
+          <div class="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden mb-6">
+            <div id="checklist-progress-bar" class="h-full bg-vowora-gradient transition-all duration-300" style="width: 0%"></div>
+          </div>
+
+          <!-- Items Container -->
+          <div id="checklist-items-container" class="max-h-96 overflow-y-auto pr-2">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- Add Custom Task Form -->
+        <form id="add-task-form" class="mt-6 pt-4 border-t border-gray-100 flex gap-2">
+          <select id="new-task-category" class="text-xs border border-gray-300 rounded-xl px-2 py-2 bg-gray-50">
+            <option value="10-12 Months Out">10-12M</option>
+            <option value="6-9 Months Out">6-9M</option>
+            <option value="3-5 Months Out">3-5M</option>
+            <option value="1 Month Out">1M</option>
+            <option value="Wedding Week">Week</option>
+          </select>
+          <input 
+            type="text" 
+            id="new-task-title" 
+            placeholder="Add a custom task (e.g. Schedule sangeet practice)..." 
+            class="flex-1 text-xs border border-gray-300 rounded-xl px-3 py-2 outline-none focus:border-rose-500"
+          />
+          <button type="submit" class="px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold rounded-xl transition-colors">
+            + Add
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3: REAL WEDDINGS & INSPIRATION -->
+  <section id="section-real-weddings" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 hidden">
+    <div class="mb-8">
+      <h2 class="text-3xl font-extrabold text-gray-900 font-serif">Real Weddings in Chennai</h2>
+      <p class="text-sm text-gray-500 mt-1">Get inspired by real couples, their decor themes, and verified vendor teams.</p>
+    </div>
+
+    <div id="real-weddings-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Rendered dynamically -->
+    </div>
+  </section>
+
+  <!-- MODAL: FULL VENDOR DETAIL PROFILE -->
+  <div id="vendor-detail-modal" class="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/70 backdrop-blur-xs hidden modal-overlay">
+    <div class="bg-white rounded-3xl overflow-hidden max-w-5xl w-full max-h-[92vh] flex flex-col shadow-2xl modal-content">
+      <div id="vendor-modal-body" class="overflow-y-auto">
+        <!-- Rendered dynamically via app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: DEDICATED LEAD CAPTURE / REQUEST QUOTE -->
+  <div id="lead-quote-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs hidden modal-overlay">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl modal-content">
+      <div class="flex items-center justify-between pb-3 border-b border-gray-100 mb-4">
+        <div>
+          <h3 class="text-base font-bold text-gray-900">Request Quote</h3>
+          <p id="quote-modal-vendor-name" class="text-xs font-semibold text-rose-600">Vendor</p>
+        </div>
+        <button id="close-quote-modal-btn" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 flex items-center justify-center text-sm font-bold">
+          ✕
+        </button>
+      </div>
+
+      <form id="dedicated-quote-form" class="space-y-3.5">
+        <div>
+          <label class="block text-xs font-bold text-gray-700 mb-1">Your Name</label>
+          <input type="text" id="quote-form-name" required placeholder="e.g. Sneha Reddy" class="w-full text-xs px-3 py-2.5 border border-gray-300 rounded-xl focus:border-rose-500 outline-none" />
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-gray-700 mb-1">WhatsApp / Mobile Number</label>
+          <input type="tel" id="quote-form-phone" required placeholder="+91 98765 43210" class="w-full text-xs px-3 py-2.5 border border-gray-300 rounded-xl focus:border-rose-500 outline-none" />
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-gray-700 mb-1">Wedding Date</label>
+            <input type="date" id="quote-form-date" required class="w-full text-xs px-3 py-2 border border-gray-300 rounded-xl focus:border-rose-500 outline-none" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-700 mb-1">Expected Guests</label>
+            <select id="quote-form-guests" class="w-full text-xs px-3 py-2 border border-gray-300 rounded-xl focus:border-rose-500 outline-none">
+              <option value="100-300">100 - 300</option>
+              <option value="300-600" selected>300 - 600</option>
+              <option value="600-1000">600 - 1000</option>
+              <option value="1000+">1000+</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-gray-700 mb-1">Specific Requirements (Optional)</label>
+          <textarea id="quote-form-notes" rows="2" placeholder="e.g. Traditional South Indian Muhurtham + Beachfront Sangeet..." class="w-full text-xs px-3 py-2 border border-gray-300 rounded-xl focus:border-rose-500 outline-none"></textarea>
+        </div>
+        <button type="submit" class="w-full py-3 bg-vowora-gradient text-white text-xs font-extrabold rounded-xl shadow-md hover:opacity-95 transition-opacity">
+          Send Enquiry & Check Dates
+        </button>
+        <p class="text-[10px] text-gray-400 text-center">
+          ⚡ 100% Free Service • The planner contacts you directly with pricing
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: CITY SELECTOR -->
+  <div id="city-selector-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs hidden modal-overlay">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl modal-content">
+      <div class="flex items-center justify-between pb-3 border-b border-gray-100 mb-4">
+        <div>
+          <h3 class="text-base font-bold text-gray-900">Select Your Wedding City</h3>
+          <p class="text-xs text-gray-500">Discover trusted local planners and venues</p>
+        </div>
+        <button id="close-city-modal-btn" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 flex items-center justify-center text-sm font-bold">
+          ✕
+        </button>
+      </div>
+
+      <div id="city-selector-grid" class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: LIST YOUR BUSINESS (VENDOR ONBOARDING) -->
+  <div id="vendor-registration-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs hidden modal-overlay">
+    <div class="bg-white rounded-3xl max-w-xl w-full p-6 shadow-2xl modal-content max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between pb-3 border-b border-gray-100 mb-4">
+        <div>
+          <h3 class="text-lg font-bold text-gray-900">List Your Wedding Business on Vowora</h3>
+          <p class="text-xs text-gray-500">Join 50,000+ vendors getting direct bookings</p>
+        </div>
+        <button id="close-reg-modal-btn" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 flex items-center justify-center text-sm font-bold">
+          ✕
+        </button>
+      </div>
+
+      <form id="vendor-registration-form" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-gray-700 mb-1">Business / Brand Name *</label>
+          <input type="text" id="reg-business-name" required placeholder="e.g. Celestial Celebrations" class="w-full text-xs px-3 py-2 border border-gray-300 rounded-xl" />
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-gray-700 mb-1">City *</label>
+            <select id="reg-city" class="w-full text-xs px-3 py-2 border border-gray-300 rounded-xl">
+              <option value="Chennai">Chennai</option>
+              <option value="Bangalore">Bangalore</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Delhi NCR">Delhi NCR</option>
+              <option value="Hyderabad">Hyderabad</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-700 mb-1">Locality / Area *</label>
+            <input type="text" id="reg-locality" required placeholder="e.g. ECR / Anna Nagar" class="w-full text-xs px-3 py-2 border border-gray-300 rounded-xl" />
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-gray-700 mb-1">Office Address</label>
+          <input type="text" id="reg-address" required placeholder="Street address, Pincode" class="w-full text-xs px-3 py-2 border border-gray-300 rounded-xl" />
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-gray-700 mb-1">Phone / WhatsApp *</label>
+            <input type="tel" id="reg-phone" required placeholder="+91 98400 12345" class="w-full text-xs px-3 py-2 border border-gray-300 rounded-xl" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-700 mb-1">Email *</label>
+            <input type="email" id="reg-email" required placeholder="contact@brand.com" class="w-full text-xs px-3 py-2 border border-gray-300 rounded-xl" />
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-gray-700 mb-1">Starting Planning Fee (₹) *</label>
+            <input type="number" id="reg-fee" required placeholder="250000" class="w-full text-xs px-3 py-2 border border-gray-300 rounded-xl" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-700 mb-1">Specialty</label>
+            <input type="text" id="reg-specialty" placeholder="e.g. Beach Weddings & Mandap Decor" class="w-full text-xs px-3 py-2 border border-gray-300 rounded-xl" />
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-gray-700 mb-1">About Your Work & Experience</label>
+          <textarea id="reg-about" rows="3" required placeholder="Describe your experience, past weddings, team strength..." class="w-full text-xs px-3 py-2 border border-gray-300 rounded-xl"></textarea>
+        </div>
+        <button type="submit" class="w-full py-3 bg-vowora-gradient text-white text-xs font-bold rounded-xl shadow-md hover:opacity-95">
+          Submit & Publish Listing
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- SLIDE-OUT DRAWER: SHORTLISTED VENDORS -->
+  <div id="shortlist-drawer" class="fixed inset-y-0 right-0 z-50 w-full sm:w-96 bg-white shadow-2xl flex flex-col hidden">
+    <div class="p-4 border-b border-gray-100 flex items-center justify-between bg-gray-50">
+      <div>
+        <h4 class="font-bold text-sm text-gray-900 flex items-center gap-1.5">
+          <span>❤️</span> Shortlisted Planners
+        </h4>
+        <span class="text-[11px] text-gray-400">Saved to your wedding profile</span>
+      </div>
+      <button id="close-shortlist-btn" class="w-8 h-8 rounded-full bg-white text-gray-600 flex items-center justify-center text-sm font-bold shadow-xs">
+        ✕
+      </button>
+    </div>
+    <div id="shortlist-drawer-content" class="flex-1 overflow-y-auto p-4 space-y-3">
+      <!-- Rendered dynamically -->
+    </div>
+  </div>
+
+  <!-- SLIDE-OUT DRAWER: MY INQUIRIES -->
+  <div id="inquiries-drawer" class="fixed inset-y-0 right-0 z-50 w-full sm:w-96 bg-white shadow-2xl flex flex-col hidden">
+    <div class="p-4 border-b border-gray-100 flex items-center justify-between bg-gray-50">
+      <div>
+        <h4 class="font-bold text-sm text-gray-900 flex items-center gap-1.5">
+          <span>📨</span> My Enquiries & Quotes
+        </h4>
+        <span class="text-[11px] text-gray-400">Track vendor response status</span>
+      </div>
+      <button id="close-inquiries-btn" class="w-8 h-8 rounded-full bg-white text-gray-600 flex items-center justify-center text-sm font-bold shadow-xs">
+        ✕
+      </button>
+    </div>
+    <div id="inquiries-drawer-content" class="flex-1 overflow-y-auto p-4 space-y-3">
+      <!-- Rendered dynamically -->
+    </div>
+  </div>
+
+  <!-- FOOTER: WEDMEGOOD COMPREHENSIVE STYLE -->
+  <footer class="bg-gray-900 text-gray-400 text-xs mt-16 pt-16 pb-12 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Top Brand Statement -->
+      <div class="flex flex-wrap items-center justify-between gap-6 pb-10 border-b border-gray-800">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-vowora-gradient flex items-center justify-center text-white font-serif font-black text-lg">V</span>
+            <span class="text-2xl font-black text-white font-serif">Vowora</span>
+          </div>
+          <p class="text-xs text-gray-400 mt-2 max-w-md">
+            India's most loved wedding planning portal. Find the best wedding planners, decorators, makeup artists, photographers, and venues in Chennai and nationwide.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <span class="text-xs text-gray-300 font-medium">Follow Vowora:</span>
+          <div class="flex gap-2 text-white">
+            <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-rose-600 transition-colors">📸</a>
+            <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-rose-600 transition-colors">📘</a>
+            <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-rose-600 transition-colors">▶️</a>
+            <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-rose-600 transition-colors">📌</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Links Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-10 border-b border-gray-800">
+        <div>
+          <h5 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Vendors in Chennai</h5>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-rose-400">Wedding Planners Chennai</a></li>
+            <li><a href="#" class="hover:text-rose-400">Wedding Photographers Chennai</a></li>
+            <li><a href="#" class="hover:text-rose-400">Bridal Makeup Artists Chennai</a></li>
+            <li><a href="#" class="hover:text-rose-400">Wedding Decorators ECR</a></li>
+            <li><a href="#" class="hover:text-rose-400">Mehndi Artists T. Nagar</a></li>
+            <li><a href="#" class="hover:text-rose-400">Traditional Samayal Masters</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Venues in Chennai</h5>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-rose-400">Beach Resorts in ECR</a></li>
+            <li><a href="#" class="hover:text-rose-400">5-Star Hotels in Guindy</a></li>
+            <li><a href="#" class="hover:text-rose-400">Heritage Mandapams Mylapore</a></li>
+            <li><a href="#" class="hover:text-rose-400">Convention Halls Anna Nagar</a></li>
+            <li><a href="#" class="hover:text-rose-400">Mahabalipuram Destination Venues</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Planning Tools</h5>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-rose-400">Wedding Budget Calculator</a></li>
+            <li><a href="#" class="hover:text-rose-400">12-Month Wedding Checklist</a></li>
+            <li><a href="#" class="hover:text-rose-400">Free Wedding E-Invites</a></li>
+            <li><a href="#" class="hover:text-rose-400">Vendor Cost Guides</a></li>
+            <li><a href="#" class="hover:text-rose-400">Concierge Assistance</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Explore Cities</h5>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-rose-400">Chennai Weddings</a></li>
+            <li><a href="#" class="hover:text-rose-400">Bangalore Weddings</a></li>
+            <li><a href="#" class="hover:text-rose-400">Hyderabad Weddings</a></li>
+            <li><a href="#" class="hover:text-rose-400">Goa Destination Weddings</a></li>
+            <li><a href="#" class="hover:text-rose-400">Jaipur Royal Weddings</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="pt-8 flex flex-wrap items-center justify-between gap-4 text-gray-500 text-[11px]">
+        <div>
+          © 2026 Vowora Technologies Pvt. Ltd. All rights reserved. Made with ❤️ for Indian Weddings.
+        </div>
+        <div class="flex gap-4">
+          <a href="#" class="hover:text-gray-400">Terms & Conditions</a>
+          <a href="#" class="hover:text-gray-400">Privacy Policy</a>
+          <a href="#" class="hover:text-gray-400">Vendor Code of Conduct</a>
+          <a href="#" class="hover:text-gray-400">Sitemap</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Main JavaScript App -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
