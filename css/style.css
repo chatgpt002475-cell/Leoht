@@ -1,15 +1,13 @@
-/* Vowora Luxury Wedding Theme & WedMeGood Styling */
+/* Vowora Luxury Wedding Theme & WedMeGood Exact Styling */
 :root {
   --primary: #e72e76;
   --primary-hover: #d11c63;
   --primary-light: #fef1f6;
+  --wmg-green: #008459;
   --accent-gold: #c99738;
-  --accent-gold-light: #fdfaf3;
-  --text-dark: #1f2937;
+  --text-dark: #2d2d2d;
   --text-muted: #6b7280;
-  --border-color: #f0f0f4;
-  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  --card-hover-shadow: 0 12px 30px rgba(231, 46, 118, 0.12);
+  --border-color: #e5e7eb;
 }
 
 * {
@@ -29,8 +27,8 @@ body {
 
 /* Custom scrollbars */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
   background: #f7f7f9;
@@ -48,10 +46,6 @@ body {
   background: linear-gradient(135deg, #e72e76 0%, #ff5277 100%);
 }
 
-.bg-gold-gradient {
-  background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
-}
-
 .text-vowora {
   color: #e72e76;
 }
@@ -64,15 +58,36 @@ body {
   border-color: #e72e76;
 }
 
+/* Mega Menu Dropdowns */
+.nav-item-dropdown {
+  position: relative;
+}
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  z-index: 50;
+  min-width: 540px;
+  padding: 18px;
+}
+.nav-item-dropdown:hover .nav-dropdown-menu {
+  display: block;
+}
+
 /* Vendor card styling */
 .vendor-card {
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid #f0f1f5;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid #eaeaea;
 }
 .vendor-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(231, 46, 118, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
-  border-color: #ffdce8;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(231, 46, 118, 0.08), 0 4px 10px rgba(0, 0, 0, 0.03);
+  border-color: #fbcfe8;
 }
 
 /* Image carousel hover controls */
@@ -81,7 +96,7 @@ body {
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 .vendor-card:hover .carousel-btn {
-  opacity: 0.92;
+  opacity: 0.95;
 }
 .carousel-btn:hover {
   opacity: 1;
@@ -90,10 +105,10 @@ body {
 
 /* Modal animations */
 .modal-overlay {
-  animation: fadeIn 0.2s ease-out forwards;
+  animation: fadeIn 0.18s ease-out forwards;
 }
 .modal-content {
-  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: slideUp 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes fadeIn {
@@ -102,47 +117,30 @@ body {
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+  from { opacity: 0; transform: translateY(18px) scale(0.98); }
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* Custom checkbox */
-.custom-checkbox:checked {
-  background-color: #e72e76;
-  border-color: #e72e76;
-}
-
-/* Badge styling */
-.badge-handpicked {
-  background: linear-gradient(135deg, #fff2e0 0%, #ffe0b2 100%);
-  color: #b76e00;
-  border: 1px solid #ffd599;
-}
-.badge-verified {
-  background: #eefbf4;
-  color: #166534;
-  border: 1px solid #bbf7d0;
-}
-.badge-toprated {
-  background: #fdf2f8;
-  color: #be185d;
-  border: 1px solid #fbcfe8;
-}
-
-/* Shimmer pulse */
-.shimmer {
-  background: linear-gradient(90deg, #f0f0f0 25%, #f8f8f8 50%, #f0f0f0 75%);
-  background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
-}
-@keyframes shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
-}
-
-/* Tabs */
+/* Active tab */
 .active-tab {
   color: #e72e76;
   border-bottom: 2px solid #e72e76;
-  font-weight: 600;
+  font-weight: 700;
+}
+
+/* E-invite card preview styling */
+.e-invite-card-gold {
+  background: linear-gradient(135deg, #1c1917 0%, #292524 100%);
+  border: 2px solid #d4af37;
+  color: #fef08a;
+}
+.e-invite-card-crimson {
+  background: linear-gradient(135deg, #881337 0%, #4c0519 100%);
+  border: 2px solid #fecdd3;
+  color: #fff1f2;
+}
+.e-invite-card-pastel {
+  background: linear-gradient(135deg, #fff1f2 0%, #fdf2f8 100%);
+  border: 2px solid #fda4af;
+  color: #881337;
 }
