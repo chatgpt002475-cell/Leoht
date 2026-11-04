@@ -1,4 +1,4 @@
-// Vowora - Complete Wedding Planners & Vendors Dataset for Chennai & Pan-India
+// Vowora - 100% WedMeGood Benchmarked Chennai Wedding Planners Dataset
 export const VENDORS_DATA = [
   {
     id: "vow-chn-01",
@@ -16,7 +16,7 @@ export const VENDORS_DATA = [
     experienceYears: 10,
     priceRange: {
       startingFee: 350000,
-      feeLabel: "₹3,50,000 - ₹6,00,000",
+      feeLabel: "₹3.5 Lakh - ₹6 Lakh",
       decorStartingFee: "₹2,50,000",
       category: "2_5l_to_4l"
     },
@@ -24,6 +24,7 @@ export const VENDORS_DATA = [
     isVerified: true,
     isFeatured: true,
     services: ["Full Planning", "Decor & Styling", "Destination Weddings", "Hospitality & Logistics"],
+    guestCapacities: ["100-300", "300-600", "600-1000", "1000+"],
     specialty: "Luxury Beachfront & Heritage Palatial Weddings",
     coverImage: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
     photos: [
@@ -100,7 +101,7 @@ export const VENDORS_DATA = [
     experienceYears: 8,
     priceRange: {
       startingFee: 220000,
-      feeLabel: "₹2,20,000 - ₹3,80,000",
+      feeLabel: "₹2.2 Lakh - ₹3.8 Lakh",
       decorStartingFee: "₹1,80,000",
       category: "under_2_5l"
     },
@@ -108,6 +109,7 @@ export const VENDORS_DATA = [
     isVerified: true,
     isFeatured: true,
     services: ["Full Planning", "Partial Planning", "Decor & Styling", "Day-of Coordination"],
+    guestCapacities: ["100-300", "300-600", "600-1000"],
     specialty: "Contemporary South Indian Traditions & Vibrant Sangeets",
     coverImage: "https://images.unsplash.com/photo-1545232979-fbf68fe9c132?auto=format&fit=crop&w=1200&q=80",
     photos: [
@@ -164,14 +166,15 @@ export const VENDORS_DATA = [
     experienceYears: 12,
     priceRange: {
       startingFee: 450000,
-      feeLabel: "₹4,50,000 - ₹8,00,000",
+      feeLabel: "₹4.5 Lakh - ₹8 Lakh",
       decorStartingFee: "₹3,50,000",
       category: "4l_to_6l"
     },
-    badge: "Verified",
+    badge: "Handpicked",
     isVerified: true,
     isFeatured: true,
     services: ["Full Planning", "Destination Weddings", "Decor & Styling", "Hospitality & Logistics"],
+    guestCapacities: ["300-600", "600-1000", "1000+"],
     specialty: "High-Profile Celebrity & Multi-Cultural Celebrations",
     coverImage: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=80",
     photos: [
@@ -221,14 +224,15 @@ export const VENDORS_DATA = [
     experienceYears: 6,
     priceRange: {
       startingFee: 190000,
-      feeLabel: "₹1,90,000 - ₹3,20,000",
+      feeLabel: "₹1.9 Lakh - ₹3.2 Lakh",
       decorStartingFee: "₹1,20,000",
       category: "under_2_5l"
     },
-    badge: "Popular",
+    badge: "Verified",
     isVerified: true,
     isFeatured: false,
     services: ["Full Planning", "Partial Planning", "Day-of Coordination"],
+    guestCapacities: ["100-300", "300-600"],
     specialty: "Eco-Friendly & Sustainable Floral Weddings",
     coverImage: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80",
     photos: [
@@ -277,7 +281,7 @@ export const VENDORS_DATA = [
     experienceYears: 15,
     priceRange: {
       startingFee: 280000,
-      feeLabel: "₹2,80,000 - ₹5,00,000",
+      feeLabel: "₹2.8 Lakh - ₹5 Lakh",
       decorStartingFee: "₹2,00,000",
       category: "2_5l_to_4l"
     },
@@ -285,6 +289,7 @@ export const VENDORS_DATA = [
     isVerified: true,
     isFeatured: true,
     services: ["Full Planning", "Decor & Styling", "Hospitality & Logistics"],
+    guestCapacities: ["300-600", "600-1000", "1000+"],
     specialty: "Authentic Vedic Muhurthams & Grand Chettinad Banquets",
     coverImage: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80",
     photos: [
@@ -322,7 +327,7 @@ export const VENDORS_DATA = [
     name: "Coastal Petals Destination Weddings",
     slug: "coastal-petals-destination-weddings",
     city: "Chennai",
-    locality: "ECR (East Coast Road)",
+    locality: "Mahabalipuram",
     address: "Mahabalipuram Main Road, ECR, Chennai - 603104",
     phone: "+91 99620 44332",
     whatsapp: "919962044332",
@@ -333,7 +338,7 @@ export const VENDORS_DATA = [
     experienceYears: 7,
     priceRange: {
       startingFee: 600000,
-      feeLabel: "₹6,00,000 - ₹12,00,000",
+      feeLabel: "₹6 Lakh - ₹12 Lakh",
       decorStartingFee: "₹4,50,000",
       category: "above_6l"
     },
@@ -341,6 +346,7 @@ export const VENDORS_DATA = [
     isVerified: true,
     isFeatured: true,
     services: ["Destination Weddings", "Full Planning", "Decor & Styling", "Hospitality & Logistics"],
+    guestCapacities: ["100-300", "300-600", "600-1000"],
     specialty: "Beachfront Glass Mandaps & Sunset Resort Celebrations",
     coverImage: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80",
     photos: [
@@ -389,7 +395,7 @@ export const VENDORS_DATA = [
     experienceYears: 9,
     priceRange: {
       startingFee: 380000,
-      feeLabel: "₹3,80,000 - ₹5,50,000",
+      feeLabel: "₹3.8 Lakh - ₹5.5 Lakh",
       decorStartingFee: "₹2,80,000",
       category: "2_5l_to_4l"
     },
@@ -397,6 +403,7 @@ export const VENDORS_DATA = [
     isVerified: true,
     isFeatured: false,
     services: ["Full Planning", "Decor & Styling", "Hospitality & Logistics"],
+    guestCapacities: ["300-600", "600-1000"],
     specialty: "High-Fashion Western & Fusion South Indian Weddings",
     coverImage: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1200&q=80",
     photos: [
@@ -445,14 +452,15 @@ export const VENDORS_DATA = [
     experienceYears: 5,
     priceRange: {
       startingFee: 175000,
-      feeLabel: "₹1,75,000 - ₹2,90,000",
+      feeLabel: "₹1.75 Lakh - ₹2.9 Lakh",
       decorStartingFee: "₹1,20,000",
       category: "under_2_5l"
     },
-    badge: "Popular",
+    badge: "Verified",
     isVerified: true,
     isFeatured: false,
     services: ["Full Planning", "Partial Planning", "Day-of Coordination"],
+    guestCapacities: ["100-300", "300-600"],
     specialty: "Budget-Friendly Modern Weddings with Maximum Value",
     coverImage: "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=1200&q=80",
     photos: [
@@ -501,7 +509,7 @@ export const VENDORS_DATA = [
     experienceYears: 8,
     priceRange: {
       startingFee: 310000,
-      feeLabel: "₹3,10,000 - ₹4,80,000",
+      feeLabel: "₹3.1 Lakh - ₹4.8 Lakh",
       decorStartingFee: "₹2,20,000",
       category: "2_5l_to_4l"
     },
@@ -509,6 +517,7 @@ export const VENDORS_DATA = [
     isVerified: true,
     isFeatured: false,
     services: ["Full Planning", "Decor & Styling", "Hospitality & Logistics"],
+    guestCapacities: ["300-600", "600-1000"],
     specialty: "Tech-Enabled Weddings with Real-time Guest RSVP Apps",
     coverImage: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80",
     photos: [
@@ -557,7 +566,7 @@ export const VENDORS_DATA = [
     experienceYears: 11,
     priceRange: {
       startingFee: 520000,
-      feeLabel: "₹5,20,000 - ₹9,50,000",
+      feeLabel: "₹5.2 Lakh - ₹9.5 Lakh",
       decorStartingFee: "₹4,00,000",
       category: "4l_to_6l"
     },
@@ -565,6 +574,7 @@ export const VENDORS_DATA = [
     isVerified: true,
     isFeatured: true,
     services: ["Full Planning", "Destination Weddings", "Decor & Styling", "Hospitality & Logistics"],
+    guestCapacities: ["300-600", "600-1000", "1000+"],
     specialty: "Palatial South-North Cross Cultural Extravaganzas",
     coverImage: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80",
     photos: [
@@ -600,7 +610,7 @@ export const VENDORS_DATA = [
 ];
 
 export const CITIES_DATA = [
-  { id: "chennai", name: "Chennai", state: "Tamil Nadu", isCurrent: true, count: 248 },
+  { id: "chennai", name: "Chennai", state: "Tamil Nadu", isCurrent: true, count: 247 },
   { id: "bangalore", name: "Bangalore", state: "Karnataka", count: 420 },
   { id: "mumbai", name: "Mumbai", state: "Maharashtra", count: 580 },
   { id: "delhi", name: "Delhi NCR", state: "Delhi", count: 650 },
@@ -621,18 +631,45 @@ export const CHENNAI_LOCALITIES = [
   "Velachery",
   "OMR (Old Mahabalipuram Road)",
   "Alwarpet",
-  "Guindy"
+  "Guindy",
+  "Mahabalipuram",
+  "Besant Nagar",
+  "Kilpauk",
+  "Porur"
 ];
 
 export const VENDOR_CATEGORIES = [
-  { id: "wedding-planners", name: "Wedding Planners", icon: "clipboard-list", count: 142, active: true },
-  { id: "venues", name: "Venues & Mandapams", icon: "building", count: 310 },
-  { id: "photographers", name: "Photographers", icon: "camera", count: 260 },
-  { id: "bridal-makeup", name: "Bridal Makeup", icon: "sparkles", count: 185 },
-  { id: "decorators", name: "Decorators & Florists", icon: "flower", count: 170 },
-  { id: "catering", name: "Catering & Sweets", icon: "utensils", count: 95 },
-  { id: "mehndi-artists", name: "Mehndi Artists", icon: "palette", count: 80 },
-  { id: "invitations", name: "Invitations & Favors", icon: "mail", count: 65 }
+  { id: "wedding-planners", name: "Wedding Planners", icon: "📋", count: 247, active: true },
+  { id: "venues", name: "Venues & Mandapams", icon: "🏰", count: 412 },
+  { id: "photographers", name: "Photographers", icon: "📷", count: 320 },
+  { id: "bridal-makeup", name: "Bridal Makeup", icon: "💄", count: 210 },
+  { id: "decorators", name: "Decorators", icon: "🌸", count: 185 },
+  { id: "catering", name: "Catering Services", icon: "🍽️", count: 120 },
+  { id: "mehndi-artists", name: "Mehndi Artists", icon: "🎨", count: 95 },
+  { id: "invitations", name: "Invitations & Favors", icon: "💌", count: 80 }
+];
+
+export const WEDMEGOOD_FAQS = [
+  {
+    q: "How much does a wedding planner in Chennai cost?",
+    a: "Wedding planners in Chennai typically charge between ₹1.5 Lakhs to ₹3.5 Lakhs for partial planning or day-of management, and ₹3.5 Lakhs to ₹8+ Lakhs for full end-to-end planning and design. Some charge a fixed fee, while others charge 10% to 15% of your total wedding budget."
+  },
+  {
+    q: "What is the difference between a Wedding Planner and a Decorator in Chennai?",
+    a: "A Wedding Decorator is responsible specifically for physical aesthetics—stage mandap, floral arches, entrance decor, table setups, and lighting. A Wedding Planner oversees your complete 360° wedding: budget management, venue scouting, hotel allotments, catering coordination, ritual timing, vendor contracts, RSVP tracking, and on-ground logistics."
+  },
+  {
+    q: "How early should we book a wedding planner in Chennai?",
+    a: "Peak muhurtham dates in Chennai (specifically between November to March and Thai/Aani masam auspicious dates) get booked out 6 to 9 months in advance. It is highly recommended to finalize your wedding planner as soon as your wedding dates are determined."
+  },
+  {
+    q: "Do Chennai wedding planners handle destination weddings in Mahabalipuram and Pondicherry?",
+    a: "Yes! Most top wedding planners in Chennai specialize in destination weddings along the scenic East Coast Road (ECR), Mahabalipuram beach resorts, Pondicherry, and heritage palace properties in Chettinad and Kumbakonam."
+  },
+  {
+    q: "Why book wedding planners through Vowora?",
+    a: "Vowora provides 100% verified customer reviews from real couples, direct contact without middlemen markups, authentic photo portfolios, transparent package fee pricing, and free wedding concierge assistance."
+  }
 ];
 
 export const REAL_WEDDINGS_DATA = [
