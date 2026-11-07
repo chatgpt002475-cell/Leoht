@@ -69,15 +69,15 @@ The application has zero build step hurdles and runs out of the box using any we
 
 ### Option A: Using Python (Recommended)
 ```bash
-python -m http.server 3000
+python -m http.server 8888
 ```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:8888](http://localhost:8888) in your browser.
 
 ### Option B: Using Node
 ```bash
-npx serve -l 3000
+npx serve -l 8888
 ```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:8888](http://localhost:8888) in your browser.
 
 ---
 

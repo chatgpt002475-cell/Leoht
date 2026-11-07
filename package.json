@@ -5,8 +5,8 @@
   "description": "Vowora - India's Premier Wedding Planning & Vendor Marketplace",
   "type": "module",
   "scripts": {
-    "start": "python -m http.server 8080",
-    "serve": "npx serve -l 8080"
+    "start": "python -m http.server 8888",
+    "serve": "npx serve -l 8888"
   },
   "keywords": [
     "wedding-marketplace",
