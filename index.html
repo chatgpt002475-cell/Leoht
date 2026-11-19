@@ -581,6 +581,20 @@
     </div>
   </div>
 
+  <!-- MODAL: FULLSCREEN PHOTO LIGHTBOX -->
+  <div id="photo-lightbox-modal" class="fixed inset-0 z-[60] bg-black/95 flex flex-col items-center justify-center p-4 hidden">
+    <button id="close-lightbox-btn" class="absolute top-4 right-4 text-white text-2xl font-bold bg-black/50 hover:bg-black/80 w-10 h-10 rounded-full flex items-center justify-center z-10 cursor-pointer">✕</button>
+    <div class="relative max-w-5xl max-h-[82vh] flex items-center justify-center">
+      <img id="lightbox-image" src="" class="max-w-full max-h-[78vh] object-contain rounded-xl shadow-2xl transition-all" />
+      <button id="lightbox-prev" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/90 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold cursor-pointer">‹</button>
+      <button id="lightbox-next" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/90 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold cursor-pointer">›</button>
+    </div>
+    <div class="text-white text-center mt-3">
+      <span id="lightbox-caption" class="text-sm font-semibold block text-rose-300"></span>
+      <span id="lightbox-counter" class="text-xs text-gray-400"></span>
+    </div>
+  </div>
+
   <!-- MODAL: DEDICATED LEAD CAPTURE / REQUEST QUOTE -->
   <div id="lead-quote-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs hidden modal-overlay">
     <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl modal-content">

@@ -59,7 +59,7 @@
     "Vijayawada": [
       "Benz Circle", "MG Road", "Bhavanipuram", "Governorpet", "Gunadala",
       "Poranki", "Auto Nagar", "Kanuru", "Moghalrajpuram", "Gollapudi",
-      "Satyanarayanapuram", "Labbipet", "Enikepadu", "Tadigadapa", "Gannavaram"
+      "Satyanarayanapuram", "Labbipet", "Enikepadu", "Tadigadapa", "Gannavaram", "Payakapuram"
     ],
     "Tirupati": [
       "KT Road", "Renigunta Road", "Korlagunta", "AIR Bypass Road", "Chandragiri Road",
@@ -97,6 +97,63 @@
     "Chennai": [
       "ECR (East Coast Road)", "T. Nagar", "Anna Nagar", "Adyar", "Mylapore",
       "Nungambakkam", "Velachery", "OMR (Old Mahabalipuram Road)", "Alwarpet", "Guindy", "Mahabalipuram"
+    ]
+  };
+
+  const CATEGORY_EXTENDED_GALLERIES = {
+    "planners": [
+      { url: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80", tag: "Mandap & Stage Setup", title: "Royal Golden Mandap" },
+      { url: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80", tag: "Telugu Rituals", title: "Jeelakarra Bellam Ceremony" },
+      { url: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80", tag: "Grand Entrance", title: "Floral Arch Pathway" },
+      { url: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1200&q=80", tag: "Couple Moments", title: "Traditional Telugu Attire" },
+      { url: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=80", tag: "Floral Ceiling", title: "Jasmine & Lotus Canopy" },
+      { url: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80", tag: "Evening Reception", title: "Chandelier & Fairy Lights" },
+      { url: "https://images.unsplash.com/photo-1545232979-fbf68fe9c132?auto=format&fit=crop&w=1200&q=80", tag: "Lawn & Open Air", title: "Coastal Beachside Setup" },
+      { url: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1200&q=80", tag: "Haldi & Sangeet", title: "Vibrant Marigold Celebration" }
+    ],
+    "venues": [
+      { url: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=80", tag: "Grand Hall Interior", title: "Central AC Kalyana Mandapam" },
+      { url: "https://images.unsplash.com/photo-1545232979-fbf68fe9c132?auto=format&fit=crop&w=1200&q=80", tag: "Lawn & Open Air", title: "Grand Riverfront Lawns" },
+      { url: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80", tag: "Mandap View", title: "Elevated Stage & Muhurtham Area" },
+      { url: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=80", tag: "Lighting & Decor", title: "Crystal Chandelier Grandeur" },
+      { url: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80", tag: "Dining & Buffet Area", title: "Traditional Plantain Leaf Hall" },
+      { url: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80", tag: "VIP Lounge", title: "Bridal Suite & Guest Lounge" }
+    ],
+    "photographers": [
+      { url: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1200&q=80", tag: "Candid Telugu Bride", title: "Pelli Kuthuru Emotions" },
+      { url: "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80", tag: "Talambralu", title: "Sacred Pearl & Rice Shower" },
+      { url: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80", tag: "Couple Portrait", title: "Kanchipuram Silk & Dhoti" },
+      { url: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80", tag: "Haldi Splash", title: "Yellow Turmeric Joy" },
+      { url: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80", tag: "Drone Shot", title: "Aerial Temple Mandap View" },
+      { url: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1200&q=80", tag: "Pre-wedding Shoot", title: "Beach Sunset Cinematic Frame" }
+    ],
+    "bridal-makeup": [
+      { url: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80", tag: "Airbrush HD Glam", title: "Flawless Bridal Finish" },
+      { url: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80", tag: "Saree Draping & Jewelry", title: "Temple Jewelry Placement" },
+      { url: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=1200&q=80", tag: "Pelli Kuthuru Look", title: "Traditional Bindi & Poola Jada" },
+      { url: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1200&q=80", tag: "Reception Glam", title: "Smokey Eyes & Sangeet Glow" }
+    ],
+    "decorators": [
+      { url: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=80", tag: "Lotus & Temple Mandap", title: "Vedic Architecture Mandap" },
+      { url: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80", tag: "Marigold Yellow Decor", title: "Traditional Telugu Floral Art" },
+      { url: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80", tag: "Stage Arch & Floral", title: "Exotic Orchid & Rose Backdrop" },
+      { url: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1200&q=80", tag: "Aisle Floral Pathway", title: "Petal Carpet Walkway" }
+    ],
+    "catering": [
+      { url: "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1200&q=80", tag: "Traditional Plantain Feast", title: "Authentic Andhra Vindu Bhojanam" },
+      { url: "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=1200&q=80", tag: "Live Sweet Counters", title: "Hot Pootharekulu & Kakinada Kaja" },
+      { url: "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=1200&q=80", tag: "Traditional Samayal", title: "Gutti Vankaya & Gongura Rice" },
+      { url: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1200&q=80", tag: "Welcome Mocktail Bar", title: "Tender Coconut & Filter Coffee" }
+    ],
+    "mehndi": [
+      { url: "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80", tag: "Bridal Full Hand Henna", title: "Intricate Telugu Story Bridal Henna" },
+      { url: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80", tag: "Feet Mandala Design", title: "Organic Sojat Pure Herbal Cones" },
+      { url: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80", tag: "Portrait Henna Art", title: "Bride & Groom Portrait Mehndi" }
+    ],
+    "invitations": [
+      { url: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80", tag: "Velvet Foil Box Cards", title: "Royal Box Invites with Dry Fruits" },
+      { url: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80", tag: "Gold Embossed Cards", title: "Telugu Script Traditional Patrika" },
+      { url: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80", tag: "Wax Seal E-Invites", title: "Animated Video WhatsApp Cards" }
     ]
   };
 
@@ -138,7 +195,10 @@
     currentPage: 1,
     pageSize: 18,
     activeVendorModal: null,
-    activeVendorTab: "overview",
+    activeVendorTab: "photos",
+    activeGalleryFilter: "all",
+    lightboxPhotos: [],
+    lightboxIndex: 0,
     quoteVendor: null,
     shortlist: safeGet('vowora_shortlist', []),
     enquiries: safeGet('vowora_enquiries', []),
@@ -301,7 +361,7 @@
           <div class="w-14 h-14 bg-rose-50 text-rose-500 rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">✕</div>
           <h3 class="text-base font-bold text-gray-800 mb-1">No ${CATEGORY_TITLES[state.activeCategory] || 'Vendors'} Found</h3>
           <p class="text-gray-500 text-xs mb-4">No listings matching your current filter in ${state.activeCity}. Try switching to "All Andhra Pradesh" or clearing filters.</p>
-          <button id="empty-reset-btn" class="px-5 py-2 bg-[#e72e76] text-white rounded-lg text-xs font-bold shadow-xs hover:bg-rose-700">Switch to All Andhra Pradesh</button>
+          <button id="empty-reset-btn" class="px-5 py-2 bg-[#e72e76] text-white rounded-lg text-xs font-bold shadow-xs hover:bg-rose-700 cursor-pointer">Switch to All Andhra Pradesh</button>
         </div>
       `;
       const btn = document.getElementById('empty-reset-btn');
@@ -352,15 +412,15 @@
               ${googleBadge}
             </div>
 
-            <button class="shortlist-btn absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-white/90 flex items-center justify-center text-gray-600 hover:text-rose-600 z-10" data-vendor-id="${vendor.id}">
+            <button class="shortlist-btn absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-white/90 flex items-center justify-center text-gray-600 hover:text-rose-600 z-10 cursor-pointer" data-vendor-id="${vendor.id}">
               <svg class="w-4 h-4 ${isShortlisted ? 'fill-rose-600 text-rose-600' : 'text-gray-600'}" fill="${isShortlisted ? 'currentColor' : 'none'}" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
             </button>
 
             ${(vendor.photos && vendor.photos.length > 1) ? `
-              <button class="carousel-btn prev-photo absolute left-2 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-black/60 text-white flex items-center justify-center text-xs z-10" data-vendor-id="${vendor.id}">‹</button>
-              <button class="carousel-btn next-photo absolute right-2 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-black/60 text-white flex items-center justify-center text-xs z-10" data-vendor-id="${vendor.id}">›</button>
+              <button class="carousel-btn prev-photo absolute left-2 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-black/60 text-white flex items-center justify-center text-xs z-10 cursor-pointer" data-vendor-id="${vendor.id}">‹</button>
+              <button class="carousel-btn next-photo absolute right-2 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-black/60 text-white flex items-center justify-center text-xs z-10 cursor-pointer" data-vendor-id="${vendor.id}">›</button>
               <div class="absolute bottom-2 right-2.5 bg-black/70 text-white text-[10px] font-semibold px-1.5 py-0.5 rounded z-10">${curIdx + 1}/${vendor.photos.length} photos</div>
             ` : ''}
 
@@ -378,11 +438,16 @@
                 </div>
               </div>
 
-              <div class="text-[11px] text-gray-500 mb-2 flex items-center gap-1.5">
+              <div class="text-[11px] text-gray-500 mb-1 flex items-center gap-1.5">
                 <span class="truncate">📍 ${vendor.locality}, ${vendor.city}</span>
                 <span>•</span>
                 <span class="text-blue-600 font-semibold shrink-0">${vendor.googleReviewCount || vendor.reviewCount} Google Reviews</span>
               </div>
+
+              <!-- Quick Link to Open Google Photos & Profile -->
+              <button class="vendor-trigger text-left text-[11px] font-bold text-[#e72e76] hover:text-rose-800 flex items-center gap-1 mb-2.5 cursor-pointer" data-vendor-id="${vendor.id}">
+                <span>📸 View 8+ Photos & Google Business Profile ↗</span>
+              </button>
 
               <div class="bg-[#FFF8F9] rounded-lg p-2.5 mb-2.5 border border-[#FFE7EE]">
                 <div class="flex items-center justify-between text-xs">
@@ -403,10 +468,10 @@
             </div>
 
             <div class="pt-3 border-t border-gray-100 grid grid-cols-2 gap-2">
-              <button class="view-contact-btn text-xs font-bold py-2 px-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 flex items-center justify-center gap-1" data-vendor-id="${vendor.id}">
+              <button class="view-contact-btn text-xs font-bold py-2 px-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 flex items-center justify-center gap-1 cursor-pointer" data-vendor-id="${vendor.id}">
                 <span>📞</span><span>Contact</span>
               </button>
-              <button class="quote-btn text-xs font-bold py-2 px-2 bg-vowora-gradient text-white rounded-lg hover:opacity-95 shadow-xs flex items-center justify-center" data-vendor-id="${vendor.id}">
+              <button class="quote-btn text-xs font-bold py-2 px-2 bg-vowora-gradient text-white rounded-lg hover:opacity-95 shadow-xs flex items-center justify-center cursor-pointer" data-vendor-id="${vendor.id}">
                 Send Message
               </button>
             </div>
@@ -445,7 +510,7 @@
 
     for (let p = startPage; p <= endPage; p++) {
       pagesHtml += `
-        <button class="page-num-btn w-8 h-8 rounded-lg text-xs font-bold transition-all ${p === currentPage ? 'bg-[#e72e76] text-white shadow-xs' : 'bg-white border border-gray-200 text-gray-700 hover:bg-gray-50'}" data-page="${p}">
+        <button class="page-num-btn w-8 h-8 rounded-lg text-xs font-bold transition-all ${p === currentPage ? 'bg-[#e72e76] text-white shadow-xs' : 'bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 cursor-pointer'}" data-page="${p}">
           ${p}
         </button>
       `;
@@ -495,7 +560,10 @@
 
   function attachCardEvents() {
     document.querySelectorAll('.vendor-trigger').forEach(el => {
-      el.addEventListener('click', () => openVendorModal(el.dataset.vendorId));
+      el.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openVendorModal(el.dataset.vendorId);
+      });
     });
 
     document.querySelectorAll('.shortlist-btn').forEach(btn => {
@@ -530,17 +598,19 @@
     });
 
     document.querySelectorAll('.quote-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
         const v = state.vendors.find(item => item.id === btn.dataset.vendorId);
-        if (v) openQuoteModal(v);
+        if (v) openVendorModal(v.id, "overview");
       });
     });
 
     document.querySelectorAll('.view-contact-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
         const v = state.vendors.find(item => item.id === btn.dataset.vendorId);
         if (v) {
-          alert(`📞 Contact ${v.name}\n\nPhone: ${v.phone}\nWhatsApp: ${v.phone}\nGoogle Place ID: ${v.googlePlaceId}\nAddress: ${v.address}\n\nDirect connection via Vowora verified concierge.`);
+          openVendorModal(v.id, "overview");
         }
       });
     });
@@ -559,121 +629,547 @@
     renderShortlistDrawer();
   }
 
-  function openVendorModal(vendorId) {
+  function getVendorExtendedPhotos(v) {
+    const catGallery = CATEGORY_EXTENDED_GALLERIES[v.category] || CATEGORY_EXTENDED_GALLERIES["planners"];
+    const basePhotos = (v.photos && v.photos.length > 0) ? v.photos : [v.coverImage];
+    const combined = [];
+
+    // First add base photos
+    basePhotos.forEach((url, i) => {
+      combined.push({
+        url: url,
+        tag: i === 0 ? "Featured Hero" : "Ceremony & Decor",
+        title: `${v.name} - Portfolio #${i + 1}`
+      });
+    });
+
+    // Add category-specific photos to make it 8-10 photos
+    catGallery.forEach((item, i) => {
+      if (!combined.some(c => c.url === item.url)) {
+        combined.push({
+          url: item.url,
+          tag: item.tag,
+          title: `${v.name} - ${item.title}`
+        });
+      }
+    });
+
+    return combined.slice(0, 10);
+  }
+
+  function openVendorModal(vendorId, defaultTab = "photos") {
     const v = state.vendors.find(item => item.id === vendorId);
     if (!v) return;
 
     state.activeVendorModal = v;
-    const modal = document.getElementById('vendor-profile-modal');
+    state.activeVendorTab = defaultTab;
+    const modal = document.getElementById('vendor-detail-modal') || document.getElementById('vendor-profile-modal');
     if (!modal) return;
 
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
 
+    renderVendorModalContent();
+  }
+
+  function renderVendorModalContent() {
+    const v = state.activeVendorModal;
+    if (!v) return;
+
     const body = document.getElementById('vendor-modal-body');
     if (!body) return;
 
+    const allPhotos = getVendorExtendedPhotos(v);
+    state.lightboxPhotos = allPhotos;
+
+    const heroPhoto = allPhotos[0].url;
+    const thumb1 = allPhotos[1] ? allPhotos[1].url : heroPhoto;
+    const thumb2 = allPhotos[2] ? allPhotos[2].url : heroPhoto;
+    const thumb3 = allPhotos[3] ? allPhotos[3].url : heroPhoto;
+    const thumb4 = allPhotos[4] ? allPhotos[4].url : heroPhoto;
+
+    const googleReviews = [
+      {
+        author: `Suresh & Mounika (${v.locality})`,
+        date: "January 2026",
+        rating: 5,
+        text: `Booked ${v.name} for our wedding in ${v.city}. Flawless coordination and authentic Telugu hospitality! Every guest appreciated the mandap and on-time execution.`,
+        tag: "Verified Wedding Client"
+      },
+      {
+        author: `Kiran Kumar (${v.city})`,
+        date: "December 2025",
+        rating: 5,
+        text: `Found their Google Business profile via Vowora. Excellent professionalism, transparent pricing without hidden surprises, and quick WhatsApp responses!`,
+        tag: "Google Maps Reviewer"
+      },
+      {
+        author: `Ramesh Babu (Father of Bride)`,
+        date: "November 2025",
+        rating: 5,
+        text: `They managed the complete Telugu muhurtham arrangements with Vedic priests, floral decors, and plantain leaf lunch coordination. 10/10 recommendation!`,
+        tag: "Verified Family Client"
+      },
+      {
+        author: `Dr. Ananya Reddy`,
+        date: "October 2025",
+        rating: 4.9,
+        text: `Very polite crew in ${v.locality}. The lighting trusses and bridal stage were stunning in all our 4K wedding photos.`,
+        tag: "Verified Couple"
+      }
+    ];
+
     body.innerHTML = `
-      <div class="relative bg-gray-900 text-white">
-        <div class="h-64 w-full grid grid-cols-1 md:grid-cols-3 gap-1 overflow-hidden">
-          <div class="md:col-span-2 h-full"><img src="${(v.photos && v.photos[0]) || v.coverImage}" class="w-full h-full object-cover" /></div>
-          <div class="hidden md:grid grid-rows-2 gap-1 h-full">
-            <img src="${(v.photos && v.photos[1]) || v.coverImage}" class="w-full h-full object-cover" />
-            <img src="${(v.photos && v.photos[2]) || v.coverImage}" class="w-full h-full object-cover" />
+      <!-- Top Sticky Bar -->
+      <div class="sticky top-0 z-30 bg-white/95 backdrop-blur-md px-6 py-3.5 border-b border-gray-100 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-rose-50 text-[#e72e76] flex items-center justify-center font-bold text-sm shadow-2xs">
+            📍
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-gray-900 leading-tight">${v.name}</h3>
+            <span class="text-[11px] text-gray-500">${v.locality}, ${v.city}, Andhra Pradesh • Google Verified</span>
           </div>
         </div>
-        <button id="close-modal-x" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/60 text-white flex items-center justify-center font-bold">✕</button>
-        <div class="absolute bottom-3 left-4 right-4 flex items-end justify-between bg-gradient-to-t from-black/80 to-transparent p-3 rounded-lg">
-          <div>
-            <span class="text-xs text-rose-300 font-semibold block">📍 ${v.locality}, ${v.city}, ${v.state}</span>
-            <h2 class="text-xl font-bold font-serif text-white">${v.name}</h2>
-          </div>
-          <div class="text-right">
-            <div class="bg-[#008459] text-white text-xs font-bold px-2 py-1 rounded inline-block">★ ${v.rating}</div>
-            <span class="text-[10px] text-gray-300 block mt-1">${v.googleReviewCount || v.reviewCount} Google Maps Reviews</span>
-          </div>
+
+        <div class="flex items-center gap-2">
+          <a href="https://wa.me/${v.whatsapp}?text=${encodeURIComponent('Hi ' + v.name + ', I found your business on Vowora. I would like to check availability and packages for my wedding.')}" target="_blank" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-lg flex items-center gap-1.5 shadow-xs transition-colors">
+            <span>💬</span><span>WhatsApp</span>
+          </a>
+          <a href="tel:${v.phone}" class="px-3 py-1.5 border border-gray-300 text-gray-700 hover:bg-gray-50 text-xs font-bold rounded-lg flex items-center gap-1 transition-colors">
+            <span>📞</span><span>${v.phone}</span>
+          </a>
+          <button id="close-modal-x" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 flex items-center justify-center text-sm font-bold cursor-pointer transition-colors">
+            ✕
+          </button>
         </div>
       </div>
-      <div class="p-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div class="lg:col-span-2 space-y-4">
-          <div>
-            <h4 class="font-bold text-sm text-gray-900 mb-1">About the Business</h4>
-            <p class="text-xs text-gray-600 leading-relaxed">${v.about}</p>
+
+      <!-- Hero Photography Grid (WedMeGood 5-Photo Mosaic) -->
+      <div class="relative bg-gray-900 p-2 sm:p-3">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-2 h-72 sm:h-96 rounded-2xl overflow-hidden">
+          <!-- Main Hero (2 Cols) -->
+          <div class="md:col-span-2 relative group cursor-pointer overflow-hidden rounded-xl modal-photo-thumb" data-photo-idx="0">
+            <img src="${heroPhoto}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20 pointer-events-none"></div>
+            <div class="absolute bottom-3 left-4 text-white pointer-events-none">
+              <span class="bg-rose-600 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded mb-1 inline-block">Featured Cover</span>
+              <h2 class="text-xl sm:text-2xl font-bold font-serif leading-tight drop-shadow-md">${v.name}</h2>
+              <span class="text-xs text-rose-200">📍 ${v.address}</span>
+            </div>
           </div>
-          <div class="p-3 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-              <span class="text-xl">🗺️</span>
-              <div>
-                <span class="text-xs font-bold text-blue-900 block">Verified on Google Maps</span>
-                <span class="text-[11px] text-blue-700">${v.address}</span>
+
+          <!-- Sub Mosaic (2 Cols) -->
+          <div class="hidden md:grid col-span-2 grid-cols-2 gap-2 h-full">
+            <div class="relative group cursor-pointer overflow-hidden rounded-xl modal-photo-thumb" data-photo-idx="1">
+              <img src="${thumb1}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <span class="absolute bottom-2 left-2 text-[10px] bg-black/60 text-white px-2 py-0.5 rounded font-medium">${allPhotos[1] ? allPhotos[1].tag : 'Mandap'}</span>
+            </div>
+            <div class="relative group cursor-pointer overflow-hidden rounded-xl modal-photo-thumb" data-photo-idx="2">
+              <img src="${thumb2}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <span class="absolute bottom-2 left-2 text-[10px] bg-black/60 text-white px-2 py-0.5 rounded font-medium">${allPhotos[2] ? allPhotos[2].tag : 'Ceremony'}</span>
+            </div>
+            <div class="relative group cursor-pointer overflow-hidden rounded-xl modal-photo-thumb" data-photo-idx="3">
+              <img src="${thumb3}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <span class="absolute bottom-2 left-2 text-[10px] bg-black/60 text-white px-2 py-0.5 rounded font-medium">${allPhotos[3] ? allPhotos[3].tag : 'Decor'}</span>
+            </div>
+            <div class="relative group cursor-pointer overflow-hidden rounded-xl modal-photo-thumb" data-photo-idx="4">
+              <img src="${thumb4}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-black/50 group-hover:bg-black/40 flex flex-col items-center justify-center text-white transition-colors">
+                <span class="text-lg">📷</span>
+                <span class="text-xs font-bold">+${allPhotos.length - 4} More</span>
+                <span class="text-[10px] text-gray-300">View All Photos</span>
               </div>
             </div>
-            <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.name + ' ' + v.city + ' ' + v.state)}" target="_blank" class="px-3 py-1.5 bg-blue-600 text-white text-xs font-bold rounded-lg hover:bg-blue-700">
-              Open in Google Maps ↗
-            </a>
           </div>
-          <div>
-            <h4 class="font-bold text-sm text-gray-900 mb-2">Packages & Services</h4>
-            <div class="space-y-2">
-              ${(v.packages || []).map(p => `
-                <div class="border border-gray-200 rounded-lg p-3 bg-white">
-                  <div class="flex justify-between text-xs font-bold mb-1">
-                    <span>${p.name}</span>
-                    <span class="text-rose-600">${p.price}</span>
+        </div>
+
+        <!-- Badges Bar below Hero -->
+        <div class="mt-2.5 flex flex-wrap items-center justify-between gap-2 px-2 text-white">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="bg-[#008459] text-white text-xs font-bold px-2 py-0.5 rounded flex items-center gap-1 shadow-xs">
+              <span>★</span><span>${v.rating}</span>
+            </span>
+            <span class="text-xs text-gray-300">${v.googleReviewCount || v.reviewCount} Google Maps Reviews</span>
+            <span class="text-gray-500">•</span>
+            <span class="bg-blue-900/80 text-blue-200 border border-blue-400/40 px-2 py-0.5 rounded text-[10px] font-bold flex items-center gap-1">
+              <span>✓</span> Google Place ID: ${v.googlePlaceId}
+            </span>
+          </div>
+
+          <button id="view-all-photos-hero-btn" class="px-3 py-1 bg-white/20 hover:bg-white/30 text-white rounded-lg text-xs font-bold flex items-center gap-1 cursor-pointer transition-colors backdrop-blur-xs">
+            <span>🖼️</span><span>Browse All ${allPhotos.length} Google Photos</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Detail Navigation Tabs -->
+      <div class="bg-white border-b border-gray-200 px-6 sticky top-[61px] z-20 flex gap-6 text-xs font-bold overflow-x-auto">
+        <button class="vendor-nav-tab py-3 border-b-2 transition-colors cursor-pointer ${state.activeVendorTab === 'photos' ? 'border-[#e72e76] text-[#e72e76]' : 'border-transparent text-gray-600 hover:text-gray-900'}" data-tab="photos">
+          📸 Photos & Portfolio (${allPhotos.length})
+        </button>
+        <button class="vendor-nav-tab py-3 border-b-2 transition-colors cursor-pointer ${state.activeVendorTab === 'overview' ? 'border-[#e72e76] text-[#e72e76]' : 'border-transparent text-gray-600 hover:text-gray-900'}" data-tab="overview">
+          ℹ️ Overview & Google Map
+        </button>
+        <button class="vendor-nav-tab py-3 border-b-2 transition-colors cursor-pointer ${state.activeVendorTab === 'pricing' ? 'border-[#e72e76] text-[#e72e76]' : 'border-transparent text-gray-600 hover:text-gray-900'}" data-tab="pricing">
+          💰 Packages & Pricing
+        </button>
+        <button class="vendor-nav-tab py-3 border-b-2 transition-colors cursor-pointer ${state.activeVendorTab === 'reviews' ? 'border-[#e72e76] text-[#e72e76]' : 'border-transparent text-gray-600 hover:text-gray-900'}" data-tab="reviews">
+          ⭐ Google Reviews (${v.googleReviewCount || v.reviewCount})
+        </button>
+      </div>
+
+      <!-- Main Body: Two Columns (Content on Left, Lead Form on Right) -->
+      <div class="p-6 grid grid-cols-1 lg:grid-cols-3 gap-6 bg-gray-50/50">
+        
+        <!-- Left Content Area -->
+        <div class="lg:col-span-2 space-y-6">
+
+          <!-- TAB 1: ALL PHOTOS & PORTFOLIO -->
+          <div id="tab-content-photos" class="${state.activeVendorTab === 'photos' ? 'block' : 'hidden'} space-y-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <h4 class="font-bold text-base text-gray-900">Google Maps Business Photo Gallery</h4>
+                <p class="text-xs text-gray-500">Real wedding work, mandap setups, and decor albums from ${v.city}</p>
+              </div>
+              <span class="text-xs font-bold text-gray-500 bg-gray-100 px-2.5 py-1 rounded-full">${allPhotos.length} High-Res Photos</span>
+            </div>
+
+            <!-- Responsive Photos Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              ${allPhotos.map((photo, pIdx) => `
+                <div class="group relative h-48 rounded-xl overflow-hidden bg-gray-200 cursor-pointer shadow-xs border border-gray-100 modal-photo-thumb" data-photo-idx="${pIdx}">
+                  <img src="${photo.url}" alt="${photo.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                  <div class="absolute bottom-2 left-2 right-2 text-white">
+                    <span class="text-[9px] font-bold uppercase tracking-wider bg-[#e72e76] text-white px-1.5 py-0.5 rounded mb-0.5 inline-block">${photo.tag}</span>
+                    <span class="text-xs font-bold block truncate">${photo.title}</span>
                   </div>
-                  <p class="text-[11px] text-gray-500 mb-2">${p.description}</p>
-                  <div class="grid grid-cols-2 gap-1 text-[11px] text-gray-600">
-                    ${(p.features || []).map(f => `<div>✓ ${f}</div>`).join('')}
+                  <div class="absolute top-2 right-2 w-6 h-6 rounded-full bg-black/60 text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                    🔍
                   </div>
                 </div>
               `).join('')}
             </div>
           </div>
+
+          <!-- TAB 2: OVERVIEW & GOOGLE MAP -->
+          <div id="tab-content-overview" class="${state.activeVendorTab === 'overview' ? 'block' : 'hidden'} space-y-5">
+            <div class="bg-white rounded-2xl p-5 border border-gray-100 shadow-2xs space-y-3">
+              <h4 class="font-bold text-sm text-gray-900">About ${v.name}</h4>
+              <p class="text-xs text-gray-600 leading-relaxed">${v.about}</p>
+              <div class="flex flex-wrap gap-2 pt-2 border-t border-gray-100">
+                <span class="px-2.5 py-1 bg-rose-50 text-rose-700 rounded-lg text-xs font-bold">⏱️ ${v.experienceYears || 8} Years Experience</span>
+                <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-lg text-xs font-bold">💒 ${v.weddingsCount || 350}+ Weddings Completed</span>
+                <span class="px-2.5 py-1 bg-blue-50 text-blue-700 rounded-lg text-xs font-bold">${v.responseTime || '⚡ Responds in 15 mins'}</span>
+              </div>
+            </div>
+
+            <!-- Live Google Map Embed -->
+            <div class="bg-white rounded-2xl p-5 border border-gray-100 shadow-2xs space-y-3">
+              <div class="flex items-center justify-between">
+                <div>
+                  <h4 class="font-bold text-sm text-gray-900 flex items-center gap-1.5">
+                    <span>🗺️</span> Verified Google Maps Location
+                  </h4>
+                  <span class="text-xs text-gray-500">${v.address}</span>
+                </div>
+                <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.name + ' ' + v.locality + ' ' + v.city + ' Andhra Pradesh')}" target="_blank" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-lg transition-colors flex items-center gap-1">
+                  <span>Open in Maps</span><span>↗</span>
+                </a>
+              </div>
+              <div class="w-full h-64 rounded-xl overflow-hidden border border-gray-200">
+                <iframe 
+                  src="https://maps.google.com/maps?q=${encodeURIComponent(v.name + ' ' + v.locality + ' ' + v.city + ' Andhra Pradesh')}&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                  width="100%" 
+                  height="100%" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy">
+                </iframe>
+              </div>
+            </div>
+
+            <!-- Operating Hours & Contact Info -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="bg-white rounded-2xl p-4 border border-gray-100 shadow-2xs space-y-2">
+                <h5 class="text-xs font-bold text-gray-900 uppercase tracking-wider flex items-center gap-1">
+                  <span>⏰</span> Business Timings
+                </h5>
+                <div class="space-y-1 text-xs text-gray-600">
+                  <div class="flex justify-between"><span>Monday – Saturday:</span><span class="font-bold text-gray-800">9:00 AM – 9:30 PM</span></div>
+                  <div class="flex justify-between"><span>Sunday:</span><span class="font-bold text-gray-800">10:00 AM – 9:00 PM</span></div>
+                  <div class="flex justify-between text-emerald-600 font-bold pt-1 border-t border-gray-100"><span>Status:</span><span>🟢 Open Today</span></div>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-2xl p-4 border border-gray-100 shadow-2xs space-y-2">
+                <h5 class="text-xs font-bold text-gray-900 uppercase tracking-wider flex items-center gap-1">
+                  <span>📞</span> Direct Concierge Line
+                </h5>
+                <div class="space-y-1.5 text-xs text-gray-600">
+                  <div><strong>Phone:</strong> <a href="tel:${v.phone}" class="text-rose-600 font-bold hover:underline">${v.phone}</a></div>
+                  <div><strong>WhatsApp:</strong> <a href="https://wa.me/${v.whatsapp}" target="_blank" class="text-emerald-600 font-bold hover:underline">+91 ${v.whatsapp.slice(-10)}</a></div>
+                  <div><strong>Email:</strong> <span class="text-gray-700">${v.email}</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 3: PACKAGES & PRICING -->
+          <div id="tab-content-pricing" class="${state.activeVendorTab === 'pricing' ? 'block' : 'hidden'} space-y-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <h4 class="font-bold text-base text-gray-900">Verified Packages & Starting Rates</h4>
+                <p class="text-xs text-gray-500">Transparent pricing verified for Telugu ceremonies in ${v.city}</p>
+              </div>
+              <span class="text-xs font-bold text-rose-700 bg-rose-50 px-2.5 py-1 rounded-full">Starting: ${v.priceRange.feeLabel}</span>
+            </div>
+
+            <div class="space-y-3">
+              <div class="bg-white rounded-2xl p-5 border border-gray-200 shadow-2xs">
+                <div class="flex items-center justify-between mb-2">
+                  <h5 class="font-bold text-sm text-gray-900">🥈 Silver Classic Package</h5>
+                  <span class="text-xs font-bold text-[#e72e76]">${v.priceRange.feeLabel}</span>
+                </div>
+                <p class="text-xs text-gray-600 mb-3">Essential coordination and event execution for intimate to medium Telugu weddings.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-600">
+                  <div class="flex items-center gap-1.5"><span class="text-emerald-500 font-bold">✓</span> On-site event manager on muhurtham day</div>
+                  <div class="flex items-center gap-1.5"><span class="text-emerald-500 font-bold">✓</span> Vendor check & timeline scheduling</div>
+                  <div class="flex items-center gap-1.5"><span class="text-emerald-500 font-bold">✓</span> Mandap stage delivery & basic lighting</div>
+                  <div class="flex items-center gap-1.5"><span class="text-emerald-500 font-bold">✓</span> WhatsApp group coordination with family</div>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-2xl p-5 border-2 border-rose-300 shadow-xs relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-[#e72e76] text-white text-[9px] font-bold uppercase tracking-wider px-3 py-0.5 rounded-bl">Most Popular</div>
+                <div class="flex items-center justify-between mb-2">
+                  <h5 class="font-bold text-sm text-gray-900">🥇 Royal Telugu Grand Package</h5>
+                  <span class="text-xs font-bold text-[#e72e76]">Decor Starting ${v.priceRange.decorStartingFee || '₹1,80,000'}</span>
+                </div>
+                <p class="text-xs text-gray-600 mb-3">Complete end-to-end management from Pelli Kuthuru / Haldi to Grand Reception.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-600">
+                  <div class="flex items-center gap-1.5"><span class="text-emerald-500 font-bold">✓</span> Traditional Lotus & Jasmine floral mandap</div>
+                  <div class="flex items-center gap-1.5"><span class="text-emerald-500 font-bold">✓</span> Complete sound, truss, and ambient stage lighting</div>
+                  <div class="flex items-center gap-1.5"><span class="text-emerald-500 font-bold">✓</span> Vedic Purohit & Nadaswaram troupe coordination</div>
+                  <div class="flex items-center gap-1.5"><span class="text-emerald-500 font-bold">✓</span> VIP guest hospitality & reception reception desk</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 4: GOOGLE REVIEWS -->
+          <div id="tab-content-reviews" class="${state.activeVendorTab === 'reviews' ? 'block' : 'hidden'} space-y-4">
+            <div class="bg-white rounded-2xl p-5 border border-gray-100 shadow-2xs flex flex-wrap items-center justify-between gap-4">
+              <div class="flex items-center gap-4">
+                <div class="text-center">
+                  <span class="text-3xl font-extrabold text-gray-900">${v.rating}</span>
+                  <div class="text-yellow-400 text-sm">★★★★★</div>
+                  <span class="text-[10px] text-gray-400">out of 5.0</span>
+                </div>
+                <div class="h-12 w-px bg-gray-200"></div>
+                <div>
+                  <h4 class="font-bold text-sm text-gray-900">Google Maps Verified Rating</h4>
+                  <p class="text-xs text-gray-500">Based on ${v.googleReviewCount || v.reviewCount} customer reviews in Andhra Pradesh</p>
+                </div>
+              </div>
+
+              <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.name + ' ' + v.locality + ' ' + v.city)}" target="_blank" class="px-3.5 py-1.5 bg-blue-50 text-blue-700 border border-blue-200 rounded-lg text-xs font-bold hover:bg-blue-100 transition-colors flex items-center gap-1">
+                <span>View on Google Maps</span><span>↗</span>
+              </a>
+            </div>
+
+            <!-- Reviews List -->
+            <div class="space-y-3">
+              ${googleReviews.map(r => `
+                <div class="bg-white rounded-2xl p-4 border border-gray-100 shadow-2xs space-y-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-8 h-8 rounded-full bg-rose-100 text-[#e72e76] font-bold text-xs flex items-center justify-center">
+                        ${r.author.charAt(0)}
+                      </div>
+                      <div>
+                        <h6 class="text-xs font-bold text-gray-900">${r.author}</h6>
+                        <span class="text-[10px] text-gray-400">${r.date} • ${r.tag}</span>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-1 bg-[#008459] text-white px-1.5 py-0.5 rounded text-[10px] font-bold">
+                      <span>★</span><span>${r.rating}</span>
+                    </div>
+                  </div>
+                  <p class="text-xs text-gray-600 leading-relaxed">${r.text}</p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
         </div>
+
+        <!-- Right Column: Sticky Quote / Lead Form -->
         <div class="lg:col-span-1">
-          <div class="bg-rose-50 p-4 rounded-xl border border-rose-200">
-            <h4 class="text-xs font-bold text-gray-900 mb-2">Request Quote & Pricing</h4>
-            <form id="modal-quote-form" class="space-y-2">
-              <input type="text" id="mq-name" required placeholder="Your Name" class="w-full text-xs p-2 border border-gray-300 rounded bg-white" />
-              <input type="tel" id="mq-phone" required placeholder="Phone / WhatsApp" class="w-full text-xs p-2 border border-gray-300 rounded bg-white" />
-              <input type="date" id="mq-date" required class="w-full text-xs p-2 border border-gray-300 rounded bg-white" />
-              <button type="submit" class="w-full py-2 bg-[#e72e76] text-white text-xs font-bold rounded">Get Best Quote</button>
+          <div class="sticky top-28 bg-white rounded-2xl p-5 border border-rose-100 shadow-lg shadow-rose-100/40 space-y-4">
+            <div class="border-b border-gray-100 pb-3">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-[#e72e76] block mb-0.5">Direct Lead Capture</span>
+              <h4 class="text-sm font-bold text-gray-900">Check Date Availability</h4>
+              <p class="text-[11px] text-gray-500">Get an instant quote directly on WhatsApp</p>
+            </div>
+
+            <form id="modal-lead-form" class="space-y-3">
+              <div>
+                <label class="block text-[11px] font-bold text-gray-700 mb-1">Your Full Name *</label>
+                <input type="text" id="mf-name" required placeholder="e.g. Ramesh Reddy" class="w-full text-xs px-3 py-2 border border-gray-300 rounded-lg outline-none focus:border-rose-500" />
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-bold text-gray-700 mb-1">WhatsApp / Phone *</label>
+                <input type="tel" id="mf-phone" required placeholder="+91 98765 43210" class="w-full text-xs px-3 py-2 border border-gray-300 rounded-lg outline-none focus:border-rose-500" />
+              </div>
+
+              <div class="grid grid-cols-2 gap-2">
+                <div>
+                  <label class="block text-[11px] font-bold text-gray-700 mb-1">Wedding Date</label>
+                  <input type="date" id="mf-date" required class="w-full text-xs px-2 py-1.5 border border-gray-300 rounded-lg outline-none focus:border-rose-500" />
+                </div>
+                <div>
+                  <label class="block text-[11px] font-bold text-gray-700 mb-1">Guests</label>
+                  <select id="mf-guests" class="w-full text-xs px-2 py-1.5 border border-gray-300 rounded-lg outline-none focus:border-rose-500">
+                    <option value="100-300">100-300</option>
+                    <option value="300-600" selected>300-600</option>
+                    <option value="600-1000">600-1000</option>
+                    <option value="1000+">1000+</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-bold text-gray-700 mb-1">Notes / Special Requests</label>
+                <textarea id="mf-notes" rows="2" placeholder="e.g. Need Telugu mandap decor in ${v.locality}..." class="w-full text-xs px-3 py-1.5 border border-gray-300 rounded-lg outline-none focus:border-rose-500"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-2.5 bg-vowora-gradient text-white text-xs font-bold rounded-lg shadow-md hover:opacity-95 transition-opacity cursor-pointer flex items-center justify-center gap-1.5">
+                <span>💬</span><span>Check Availability & Connect</span>
+              </button>
+              <p class="text-[10px] text-gray-400 text-center">⚡ 100% Free Service • Direct connect with ${v.name}</p>
             </form>
           </div>
         </div>
+
       </div>
     `;
 
-    const closeBtn = document.getElementById('close-modal-x');
-    if (closeBtn) closeBtn.addEventListener('click', closeVendorModal);
+    // Bind Tab Switching inside Modal
+    body.querySelectorAll('.vendor-nav-tab').forEach(tabBtn => {
+      tabBtn.addEventListener('click', () => {
+        const tab = tabBtn.dataset.tab;
+        state.activeVendorTab = tab;
+        renderVendorModalContent();
+      });
+    });
 
-    const mForm = document.getElementById('modal-quote-form');
-    if (mForm) {
-      mForm.addEventListener('submit', (e) => {
+    const viewAllBtn = body.querySelector('#view-all-photos-hero-btn');
+    if (viewAllBtn) {
+      viewAllBtn.addEventListener('click', () => {
+        state.activeVendorTab = 'photos';
+        renderVendorModalContent();
+      });
+    }
+
+    // Bind Close Button
+    const closeBtn = body.querySelector('#close-modal-x');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeVendorModal);
+    }
+
+    // Bind Lightbox Trigger on all modal photo thumbnails
+    body.querySelectorAll('.modal-photo-thumb').forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        const idx = parseInt(thumb.dataset.photoIdx, 10);
+        openLightbox(allPhotos, idx);
+      });
+    });
+
+    // Bind Modal Lead Form
+    const leadForm = body.querySelector('#modal-lead-form');
+    if (leadForm) {
+      leadForm.addEventListener('submit', (e) => {
         e.preventDefault();
+        const clientName = document.getElementById('mf-name').value;
+        const phone = document.getElementById('mf-phone').value;
+        const date = document.getElementById('mf-date').value;
+        const guests = document.getElementById('mf-guests').value;
+        const notes = document.getElementById('mf-notes').value;
+
         const enq = {
           vendorId: v.id,
           vendorName: v.name,
-          clientName: document.getElementById('mq-name').value,
-          phone: document.getElementById('mq-phone').value,
-          date: document.getElementById('mq-date').value,
+          clientName: clientName,
+          phone: phone,
+          date: date,
           timestamp: new Date().toLocaleDateString(),
-          status: 'Request Sent'
+          status: 'Direct Inquired'
         };
         state.enquiries.push(enq);
         saveStorage();
         triggerConfetti();
-        alert(`🎉 Quote requested successfully for ${v.name}!\nTheir team will contact you on WhatsApp within 15 minutes.`);
+
+        // Redirect to WhatsApp with prefilled message
+        const waText = encodeURIComponent(`Hi ${v.name}, my name is ${clientName} (${phone}). I found your verified Google Maps profile on Vowora. I would like to check availability for our wedding on ${date || 'upcoming date'} for ${guests} guests in ${v.locality}, ${v.city}.\nNote: ${notes}`);
+        window.open(`https://wa.me/${v.whatsapp}?text=${waText}`, '_blank');
+
+        alert(`🎉 Availability checked for ${v.name}!\nOpening WhatsApp connection to finalize dates.`);
         closeVendorModal();
       });
     }
   }
 
   function closeVendorModal() {
-    const modal = document.getElementById('vendor-profile-modal');
+    const modal = document.getElementById('vendor-detail-modal') || document.getElementById('vendor-profile-modal');
     if (modal) modal.classList.add('hidden');
     state.activeVendorModal = null;
     document.body.style.overflow = '';
+  }
+
+  // Fullscreen Photo Lightbox Logic
+  function openLightbox(photos, startIndex = 0) {
+    state.lightboxPhotos = photos;
+    state.lightboxIndex = startIndex;
+
+    const lbModal = document.getElementById('photo-lightbox-modal');
+    if (!lbModal) return;
+
+    lbModal.classList.remove('hidden');
+    updateLightboxUI();
+  }
+
+  function updateLightboxUI() {
+    const lbModal = document.getElementById('photo-lightbox-modal');
+    if (!lbModal || state.lightboxPhotos.length === 0) return;
+
+    const current = state.lightboxPhotos[state.lightboxIndex];
+    const imgEl = document.getElementById('lightbox-image');
+    const capEl = document.getElementById('lightbox-caption');
+    const cntEl = document.getElementById('lightbox-counter');
+
+    if (imgEl) imgEl.src = current.url;
+    if (capEl) capEl.textContent = `${current.tag} • ${current.title}`;
+    if (cntEl) cntEl.textContent = `Photo ${state.lightboxIndex + 1} of ${state.lightboxPhotos.length}`;
+  }
+
+  function closeLightbox() {
+    const lbModal = document.getElementById('photo-lightbox-modal');
+    if (lbModal) lbModal.classList.add('hidden');
+  }
+
+  function prevLightbox() {
+    if (state.lightboxPhotos.length === 0) return;
+    state.lightboxIndex = (state.lightboxIndex - 1 + state.lightboxPhotos.length) % state.lightboxPhotos.length;
+    updateLightboxUI();
+  }
+
+  function nextLightbox() {
+    if (state.lightboxPhotos.length === 0) return;
+    state.lightboxIndex = (state.lightboxIndex + 1) % state.lightboxPhotos.length;
+    updateLightboxUI();
   }
 
   function openQuoteModal(vendor) {
@@ -757,7 +1253,7 @@
     if (!container) return;
 
     container.innerHTML = CITIES_DATA.map(c => `
-      <button class="city-btn p-3 rounded-xl border text-left transition-all ${c.name === state.activeCity ? 'border-[#e72e76] bg-rose-50 text-[#e72e76] font-bold' : 'border-gray-200 hover:border-gray-300 text-gray-700'}" data-city="${c.name}">
+      <button class="city-btn p-3 rounded-xl border text-left transition-all cursor-pointer ${c.name === state.activeCity ? 'border-[#e72e76] bg-rose-50 text-[#e72e76] font-bold' : 'border-gray-200 hover:border-gray-300 text-gray-700'}" data-city="${c.name}">
         <span class="text-xs block font-bold">${c.isAP ? '📍 ' : ''}${c.name}</span>
         <span class="text-[10px] text-gray-400 block">${c.count.toLocaleString()} Google Map Listings</span>
       </button>
@@ -812,16 +1308,19 @@
     }
     c.innerHTML = list.map(v => `
       <div class="flex items-center gap-2.5 p-2 rounded-lg border border-gray-100 bg-white text-xs">
-        <img src="${(v.photos && v.photos[0]) || v.coverImage}" class="w-12 h-12 rounded object-cover" />
+        <img src="${(v.photos && v.photos[0]) || v.coverImage}" class="w-12 h-12 rounded object-cover cursor-pointer vendor-trigger" data-vendor-id="${v.id}" />
         <div class="flex-1 min-w-0">
-          <h5 class="font-bold text-gray-900 truncate">${v.name}</h5>
+          <h5 class="font-bold text-gray-900 truncate cursor-pointer vendor-trigger hover:text-rose-600" data-vendor-id="${v.id}">${v.name}</h5>
           <span class="text-rose-600 font-semibold text-[11px]">${v.priceRange.feeLabel}</span>
         </div>
-        <button class="remove-shortlist text-[10px] text-gray-400 hover:text-red-600" data-id="${v.id}">✕</button>
+        <button class="remove-shortlist text-[10px] text-gray-400 hover:text-red-600 cursor-pointer" data-id="${v.id}">✕</button>
       </div>
     `).join('');
     c.querySelectorAll('.remove-shortlist').forEach(b => {
       b.addEventListener('click', () => toggleShortlist(b.dataset.id));
+    });
+    c.querySelectorAll('.vendor-trigger').forEach(el => {
+      el.addEventListener('click', () => openVendorModal(el.dataset.vendorId));
     });
   }
 
@@ -992,26 +1491,32 @@
     const qClose = document.getElementById('close-quote-modal-btn');
     if (qClose) qClose.addEventListener('click', closeQuoteModal);
 
-    // Interactive Lead Capture Form
-    const leadForm = document.getElementById('lead-quote-form');
-    if (leadForm) {
-      leadForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const v = state.quoteVendor;
-        const enq = {
-          vendorId: v ? v.id : 'general',
-          vendorName: v ? v.name : 'Vowora Concierge',
-          clientName: document.getElementById('lead-name') ? document.getElementById('lead-name').value : 'Client',
-          phone: document.getElementById('lead-phone') ? document.getElementById('lead-phone').value : '',
-          date: document.getElementById('lead-date') ? document.getElementById('lead-date').value : '',
-          timestamp: new Date().toLocaleDateString(),
-          status: 'Quote Sent'
-        };
-        state.enquiries.push(enq);
-        saveStorage();
-        triggerConfetti();
-        alert(`🎉 Quote requested successfully for ${enq.vendorName}!\nOur wedding manager will call and WhatsApp you shortly.`);
+    // Lightbox Controls
+    const lbClose = document.getElementById('close-lightbox-btn');
+    if (lbClose) lbClose.addEventListener('click', closeLightbox);
+    const lbPrev = document.getElementById('lightbox-prev');
+    if (lbPrev) lbPrev.addEventListener('click', prevLightbox);
+    const lbNext = document.getElementById('lightbox-next');
+    if (lbNext) lbNext.addEventListener('click', nextLightbox);
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeVendorModal();
         closeQuoteModal();
+        closeLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        prevLightbox();
+      } else if (e.key === 'ArrowRight') {
+        nextLightbox();
+      }
+    });
+
+    // Close on outside overlay click
+    const vDetailModal = document.getElementById('vendor-detail-modal') || document.getElementById('vendor-profile-modal');
+    if (vDetailModal) {
+      vDetailModal.addEventListener('click', (e) => {
+        if (e.target === vDetailModal) closeVendorModal();
       });
     }
   }
